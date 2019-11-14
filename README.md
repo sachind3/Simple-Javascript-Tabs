@@ -2,7 +2,7 @@
 Simple Javascript Tabs
 
 
-<style>
+    <style>
         * {
             margin: 0;
             padding: 0;
