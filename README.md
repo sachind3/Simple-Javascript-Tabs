@@ -1,2 +1,88 @@
 # Simple-Javascript-Tabs
 Simple Javascript Tabs
+
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            padding: 30px;
+        }
+
+        .tab-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .tab-title {
+            background: #232323;
+            border-right: 1px solid #111;
+            padding: 0.8rem 1.2rem;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .tab-title.active {
+            background: brown;
+        }
+
+        .tab-content {
+            padding: 0.8rem 1.2rem;
+            background: #f1f1f1;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block
+        }
+    </style>
+
+    <div id="tabs">
+        <div class="tab-header">
+            <a href="javascript:void(0);" class="tab-title active" data-title="title1">Tab title 1</a>
+            <a href="javascript:void(0);" class="tab-title" data-title="title2">Tab title 2</a>
+            <a href="javascript:void(0);" class="tab-title" data-title="title3">Tab title 3</a>
+        </div>
+        <div class="tab-container">
+            <div class="tab-content active" data-content="title1">
+                1. This is tab article 1<br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, cum! Sapiente porro tempore distinctio
+                itaque. Impedit repudiandae sunt consequuntur saepe accusamus ab voluptatibus enim facilis reprehenderit
+                eveniet. Iure, aspernatur quas.
+            </div>
+            <div class="tab-content" data-content="title2">
+                2. This is tab article 2<br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, cum! Sapiente porro tempore distinctio
+                itaque. Impedit repudiandae sunt consequuntur saepe accusamus ab voluptatibus enim facilis reprehenderit
+                eveniet. Iure, aspernatur quas.
+            </div>
+            <div class="tab-content" data-content="title3">
+                3. This is tab article 3<br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, cum! Sapiente porro tempore distinctio
+                itaque. Impedit repudiandae sunt consequuntur saepe accusamus ab voluptatibus enim facilis reprehenderit
+                eveniet. Iure, aspernatur quas.
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        (function () {
+            let tabTitles = document.querySelectorAll('.tab-title');
+            tabTitles.forEach(function (el, index) {
+                el.addEventListener('click', function () {
+                    let currentTabData = document.querySelector('.tab-content[data-content="' + this.dataset.title + '"]');
+                    document.querySelector('.tab-title.active').classList.remove('active');
+                    document.querySelector('.tab-content.active').classList.remove('active');
+                    currentTabData.classList.add('active');
+                    this.classList.add('active');
+                })
+            });
+        })();
+    </script>
+ 
