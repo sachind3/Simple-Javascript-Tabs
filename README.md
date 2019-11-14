@@ -1,6 +1,8 @@
 # Simple-Javascript-Tabs
 Simple Javascript Tabs
 
+Pure Simple Javascript Accordion Codepen URl https://codepen.io/sachindesai/pen/JjjmOem
+
 
     <style>
         * {
